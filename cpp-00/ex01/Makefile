@@ -6,13 +6,13 @@
 #    By: iharchi <iharchi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/08 15:44:26 by iharchi           #+#    #+#              #
-#    Updated: 2021/10/08 15:48:50 by iharchi          ###   ########.fr        #
+#    Updated: 2021/10/08 17:39:39 by iharchi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = myPhoneBook
 
-SRCS = megaphone.cpp
+SRCS = phonebook.cpp
 
 FLAGS = -Wall -Werror -Wextra
 

@@ -6,7 +6,7 @@
 /*   By: iharchi <iharchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 17:39:24 by iharchi           #+#    #+#             */
-/*   Updated: 2021/10/09 14:15:05 by iharchi          ###   ########.fr       */
+/*   Updated: 2021/10/09 15:11:59 by iharchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class Phonebook {
 		void	add_contact(std::string first_name, std::string last_name, std::string nickname, std::string phonenumber, std::string darkest_secret);
 		void	prompt_search();
 		void	print_contact(int index);
+		
 		void	set_contacts(Contact contact)
 		{
 			_count %= _MAX_CONTACT;

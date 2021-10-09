@@ -6,7 +6,7 @@
 /*   By: iharchi <iharchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 18:53:47 by iharchi           #+#    #+#             */
-/*   Updated: 2021/10/08 19:22:04 by iharchi          ###   ########.fr       */
+/*   Updated: 2021/10/09 14:06:48 by iharchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,9 @@ class Contact {
 		std::string _phonenumber;
 		std::string _darkest_secret;
 	public:
-		Contact(std::string first_name, std::string last_name, std::string nickname, std::string phonenumber, std::string darkest_secret);
+		bool empty;
 		Contact();
+		Contact(std::string first_name, std::string last_name, std::string nickname, std::string phonenumber, std::string darkest_secret);
 		~Contact();
 		void	show_contact_in_search();
 		void	show_contact();

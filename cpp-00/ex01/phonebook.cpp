@@ -6,7 +6,7 @@
 /*   By: iharchi <iharchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 17:39:21 by iharchi           #+#    #+#             */
-/*   Updated: 2021/10/09 14:13:24 by iharchi          ###   ########.fr       */
+/*   Updated: 2021/10/10 15:09:15 by iharchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,22 @@ void	Phonebook::print_contact(int index)
 	std::cout << contact.get_nickname() << "\n";
 	std::cout << contact.get_phonenumber() << "\n";
 	std::cout << contact.get_darkest_secret() << "\n";
+}
+
+void	Phonebook::set_contacts(Contact contact)
+{
+	_count %= _MAX_CONTACT;
+	_contacts[_count++] = contact;
+}
+Contact	Phonebook::get_contact(int index)
+{
+	return _contacts[index];
+}
+int		Phonebook::get_max_contacts()
+{
+	return _MAX_CONTACT;
+}
+int		Phonebook::get_current_count()
+{
+	return _count;
 }

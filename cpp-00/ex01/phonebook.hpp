@@ -6,7 +6,7 @@
 /*   By: iharchi <iharchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 17:39:24 by iharchi           #+#    #+#             */
-/*   Updated: 2021/10/09 15:11:59 by iharchi          ###   ########.fr       */
+/*   Updated: 2021/10/10 15:09:50 by iharchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,21 +28,8 @@ class Phonebook {
 		void	prompt_search();
 		void	print_contact(int index);
 		
-		void	set_contacts(Contact contact)
-		{
-			_count %= _MAX_CONTACT;
-			_contacts[_count++] = contact;
-		}
-		Contact	get_contact(int index)
-		{
-			return _contacts[index];
-		}
-		int		get_max_contacts()
-		{
-			return _MAX_CONTACT;
-		}
-		int		get_current_count()
-		{
-			return _count;
-		}
+		void	set_contacts(Contact contact);
+		Contact	get_contact(int index);
+		int		get_max_contacts();
+		int		get_current_count();
 };

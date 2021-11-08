@@ -6,7 +6,7 @@
 /*   By: iharchi <iharchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 19:24:03 by iharchi           #+#    #+#             */
-/*   Updated: 2021/11/08 15:37:36 by iharchi          ###   ########.fr       */
+/*   Updated: 2021/11/08 19:55:56 by iharchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,23 +46,16 @@ int	main(void)
 			std::cout << "List of contacts\n";
 			phonebook.prompt_search();
 			std::cout << "Please choose an index to see : ";
-			bool flag = false;
-			while (!flag)
+			std::cin >> is;
+			i = atoi(&is);
+			if (isdigit(is) && i < phonebook.get_current_count() && i >= 0)
+				phonebook.print_contact(i);
+			else
 			{
-				std::cin >> is;
-				i = atoi(&is);
-				if (isdigit(is) && i < phonebook.get_current_count() && i >= 0)
-				{
-					phonebook.print_contact(i);
-					flag = true;
-				}
-				else
-				{
-					std::cout << "Please choose an index between 0 and lower than "<< phonebook.get_current_count() << "\n";
-					std::cin.clear();
-				}
-				i = 0;
+				std::cout << "Please choose an index between 0 and lower than "<< phonebook.get_current_count() << "\n";
+				std::cin.clear();
 			}
+			i = 0;
 		}
 		else
 			std::cout << "Please choose one of the possible commands (ADD, SEARCH, EXIT) \n";

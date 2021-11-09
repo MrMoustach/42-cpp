@@ -6,7 +6,7 @@
 #    By: iharchi <iharchi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/08 15:44:26 by iharchi           #+#    #+#              #
-#    Updated: 2021/10/08 15:48:50 by iharchi          ###   ########.fr        #
+#    Updated: 2021/11/09 13:58:42 by iharchi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = megaphone
 
 SRCS = megaphone.cpp
 
-FLAGS = -Wall -Werror -Wextra
+FLAGS = -Wall -Werror -Wextra --std="c++98"
 
 all: $(NAME)
 $(NAME): 

@@ -6,7 +6,7 @@
 /*   By: iharchi <iharchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 19:24:03 by iharchi           #+#    #+#             */
-/*   Updated: 2021/11/09 11:27:10 by iharchi          ###   ########.fr       */
+/*   Updated: 2021/11/09 12:17:20 by iharchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ int	main(void)
 	std::cout << "Welcome to your phonebook : \n> ";
 	while (std::getline(std::cin, command))
 	{
-		// std::cin >> command;
 		if (command == "")
 			continue ;
 		if (command == "EXIT")
@@ -36,7 +35,7 @@ int	main(void)
 			for (int i = 0; i < 5; i++)
 			{
 				std::cout << prompts[i] << " : ";
-				std::cin >> data[i];
+				std::getline(std::cin, data[i]);
 			}
 			phonebook.add_contact(data[0], data[1], data[2], data[3], data[4]);
 			std::cout << "Contact added\n";

@@ -6,7 +6,7 @@
 /*   By: iharchi <iharchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 17:39:21 by iharchi           #+#    #+#             */
-/*   Updated: 2021/11/09 10:59:13 by iharchi          ###   ########.fr       */
+/*   Updated: 2021/11/09 16:26:48 by iharchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,10 @@ void	print_string(std::string s)
 	int	size;
 	
 	size = s.size();
-	std::cout << std::right << std::setw(9) << s.substr(0, 9);
-	if (size > 9)
-		std::cout << ".";
+	if (size <= 10)
+		std::cout << std::right << std::setw(10) << s;
 	else
-		std::cout << " ";
+		std::cout << std::right << std::setw(9) << s.substr(0, 9) << ".";
 }
 void	Phonebook::prompt_search()
 {

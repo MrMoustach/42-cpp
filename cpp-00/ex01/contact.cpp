@@ -6,7 +6,7 @@
 /*   By: iharchi <iharchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 19:07:34 by iharchi           #+#    #+#             */
-/*   Updated: 2021/11/09 10:59:00 by iharchi          ###   ########.fr       */
+/*   Updated: 2021/11/09 14:06:59 by iharchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,6 @@ Contact::Contact(std::string first_name, std::string last_name, std::string nick
 	set_phonenumber(phonenumber);
 	set_darkest_secret(darkest_secret);
 	_empty = false;
-}
-void	show_contact_in_search()
-{
-	std::cout << "lmao\n";
-}
-void	show_contact()
-{
-	std::cout << "lmao2\n";
 }
 void	Contact::set_first_name(std::string first_name)
 {

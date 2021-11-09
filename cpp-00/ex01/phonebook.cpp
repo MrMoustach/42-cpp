@@ -6,7 +6,7 @@
 /*   By: iharchi <iharchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 17:39:21 by iharchi           #+#    #+#             */
-/*   Updated: 2021/11/08 13:58:48 by iharchi          ###   ########.fr       */
+/*   Updated: 2021/11/09 10:59:13 by iharchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	Phonebook::prompt_search()
 {
 	for (int i = 0; i < _MAX_CONTACT; i++)
 	{
-		if (_contacts[i].empty)
+		if (_contacts[i].is_empty())
 			continue ;
 		std::cout << i << "|";
 		print_string(_contacts[i].get_first_name());

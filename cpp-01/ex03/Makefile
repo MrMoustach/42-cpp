@@ -6,7 +6,7 @@
 #    By: iharchi <iharchi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/08 15:44:26 by iharchi           #+#    #+#              #
-#    Updated: 2021/11/09 18:24:24 by iharchi          ###   ########.fr        #
+#    Updated: 2021/11/09 18:47:00 by iharchi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = fight
 
 SRCS = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
 
-FLAGS = -Wall -Werror -Wextra
+FLAGS = -Wall -Werror -Wextra --std="c++98"
 
 all: $(NAME)
 $(NAME): 

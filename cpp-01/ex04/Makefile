@@ -6,11 +6,11 @@
 #    By: iharchi <iharchi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/08 15:44:26 by iharchi           #+#    #+#              #
-#    Updated: 2021/11/09 18:51:08 by iharchi          ###   ########.fr        #
+#    Updated: 2021/11/10 13:02:16 by iharchi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = fight
+NAME = replace
 
 SRCS = main.cpp
 

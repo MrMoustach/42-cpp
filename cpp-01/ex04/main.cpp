@@ -6,7 +6,7 @@
 /*   By: iharchi <iharchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 18:51:22 by iharchi           #+#    #+#             */
-/*   Updated: 2021/11/10 13:06:06 by iharchi          ###   ########.fr       */
+/*   Updated: 2021/11/11 03:29:55 by iharchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ int main(int ac, char** av)
 
 	if (ac != 4)
 	{
-		std::cerr << "Please provide 3 argument as ./replace [file] [string to replace] [replacement]";
+		std::cerr << "Please provide 3 argument as ./replace [file] [string to replace] [replacement]" << std::endl;
+		return (1);
 	}
 	file.open(av[1]);
 	

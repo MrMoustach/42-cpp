@@ -6,7 +6,7 @@
 /*   By: iharchi <iharchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 01:56:37 by iharchi           #+#    #+#             */
-/*   Updated: 2021/11/11 03:06:55 by iharchi          ###   ########.fr       */
+/*   Updated: 2021/11/11 03:31:01 by iharchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,13 @@
 
 int	main(int ac, char** av)
 {
-	Karen karen = Karen();
-	std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-	(void) ac;
 	if (ac < 2)
 	{
 		std::cout << "Please provide a level of Karen" << std::endl;
 		return (1);
 	}
+	Karen karen = Karen();
+	std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	switch (index_of(av[1], levels)) 
 	{
 		case 0:

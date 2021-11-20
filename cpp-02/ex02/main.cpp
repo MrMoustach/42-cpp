@@ -6,7 +6,7 @@
 /*   By: iharchi <iharchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 01:27:11 by iharchi           #+#    #+#             */
-/*   Updated: 2021/11/18 04:33:08 by iharchi          ###   ########.fr       */
+/*   Updated: 2021/11/20 19:56:04 by iharchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int main( void ) {
 	std::cout << b << std::endl;
 
 	std::cout << Fixed::max( a, b ) << std::endl;
+	std::cout << Fixed::min( a, b ) << std::endl;
 	
 	return 0;
 }

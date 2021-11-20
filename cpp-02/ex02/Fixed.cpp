@@ -6,7 +6,7 @@
 /*   By: iharchi <iharchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 17:40:03 by zed               #+#    #+#             */
-/*   Updated: 2021/11/18 04:43:52 by iharchi          ###   ########.fr       */
+/*   Updated: 2021/11/20 18:11:18 by iharchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,25 +35,21 @@ int	ft_pow(int n, int power)
 Fixed::Fixed()
 {
 	_value = 0;
-	_n_bits = 8;
 }
 
 Fixed::Fixed(const Fixed &f)
 {
-	_n_bits = 8;
 	_value = f.getRawBits();
 }
 
 Fixed::Fixed(const int n)
 {
-	_n_bits = 8;
-	_value = roundf(n * ft_pow(2, _n_bits));
+	_value = roundf(n * (1 << _n_bits));
 }
 
 Fixed::Fixed(const float n)
 {
-	_n_bits = 8;
-	_value = roundf(n * ft_pow(2, _n_bits));
+	_value = roundf(n * (1 << _n_bits));
 }
 
 Fixed & Fixed::operator = (const Fixed &f)
@@ -65,31 +61,31 @@ Fixed & Fixed::operator = (const Fixed &f)
 
 Fixed & Fixed::operator + (const Fixed &f)
 {
-	_value = roundf((this->toFloat() + f.toFloat()) * ft_pow(2, _n_bits));
+	_value = roundf((this->toFloat() + f.toFloat()) * (1 << _n_bits));
 	return *this;
 }
 
 Fixed & Fixed::operator - (const Fixed &f)
 {
-	_value = roundf((this->toFloat() - f.toFloat()) * ft_pow(2, _n_bits));
+	_value = roundf((this->toFloat() - f.toFloat()) * (1 << _n_bits));
 	return *this;
 }
 
 Fixed & Fixed::operator / (const Fixed &f)
 {
-	_value = roundf((this->toFloat() / f.toFloat()) * ft_pow(2, _n_bits));
+	_value = roundf((this->toFloat() / f.toFloat()) * (1 << _n_bits));
 	return *this;
 }
 
 Fixed & Fixed::operator * (const Fixed &f)
 {
-	_value = roundf((this->toFloat() * f.toFloat()) * ft_pow(2, _n_bits));
+	_value = roundf((this->toFloat() * f.toFloat()) * (1 << _n_bits));
 	return *this;
 }
 
 Fixed & Fixed::operator++()
 {
-	_value = roundf((this->toFloat() + 0.00390625) * ft_pow(2, _n_bits));
+	_value++;
 	return *this;
 }
 
@@ -102,7 +98,7 @@ Fixed Fixed::operator++(int)
 
 Fixed & Fixed::operator--()
 {
-	_value = roundf((this->toFloat() - 0.00390625) * ft_pow(2, _n_bits));
+	_value--;
 	return *this;
 }
 
@@ -128,12 +124,12 @@ void Fixed::setRawBits(int const raw)
 }
 int	Fixed::toInt(void) const
 {
-	return ((float)_value) / ft_pow(2, _n_bits);
+	return ((float)_value) / (float)(1 << _n_bits);
 }
 
 float Fixed::toFloat(void) const
 {
-	return ((float)_value) / ft_pow(2, _n_bits);
+	return ((float)_value) / (float)(1 << _n_bits);
 }
 
 std::ostream& operator<<(std::ostream& os, const Fixed& f)

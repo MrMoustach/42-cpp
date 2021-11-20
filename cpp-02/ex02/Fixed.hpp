@@ -6,7 +6,7 @@
 /*   By: iharchi <iharchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 17:37:22 by zed               #+#    #+#             */
-/*   Updated: 2021/11/18 04:37:58 by iharchi          ###   ########.fr       */
+/*   Updated: 2021/11/20 18:07:48 by iharchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ class Fixed
 {
 	private:
 		int _value;
-		int	_n_bits;
+		static const int	_n_bits = 8;
 	public:
 		Fixed ();
 		Fixed (const Fixed &f);

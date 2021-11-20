@@ -6,7 +6,7 @@
 /*   By: iharchi <iharchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 17:40:03 by zed               #+#    #+#             */
-/*   Updated: 2021/11/18 00:06:31 by iharchi          ###   ########.fr       */
+/*   Updated: 2021/11/20 18:14:55 by iharchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ Fixed::Fixed()
 {
 	std::cout << "Default constructor called" << std::endl;
 	_value = 0;
-	_n_bits = 8;
 }
 
 Fixed::Fixed(const Fixed &f)

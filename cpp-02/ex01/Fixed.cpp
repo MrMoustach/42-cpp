@@ -6,7 +6,7 @@
 /*   By: iharchi <iharchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 17:40:03 by zed               #+#    #+#             */
-/*   Updated: 2021/11/18 04:15:13 by iharchi          ###   ########.fr       */
+/*   Updated: 2021/11/20 18:14:15 by iharchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,28 +36,24 @@ Fixed::Fixed()
 {
 	std::cout << "Default constructor called" << std::endl;
 	_value = 0;
-	_n_bits = 8;
 }
 
 Fixed::Fixed(const Fixed &f)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	_n_bits = 8;
 	_value = f.getRawBits();
 }
 
 Fixed::Fixed(const int n)
 {
 	std::cout << "Int constructor called" << std::endl;
-	_n_bits = 8;
-	_value = roundf(n * ft_pow(2, _n_bits));
+	_value = roundf(n * (1 << _n_bits));
 }
 
 Fixed::Fixed(const float n)
 {
 	std::cout << "Float constructor called" << std::endl;
-	_n_bits = 8;
-	_value = roundf(n * ft_pow(2, _n_bits));
+	_value = roundf(n * (1 << _n_bits));
 }
 
 Fixed & Fixed::operator = (const Fixed &f)
@@ -86,12 +82,12 @@ void Fixed::setRawBits(int const raw)
 }
 int	Fixed::toInt(void) const
 {
-	return ((float)_value) / ft_pow(2, _n_bits);
+	return ((float)_value) / (float)(1 << _n_bits);
 }
 
 float Fixed::toFloat(void) const
 {
-	return ((float)_value) / ft_pow(2, _n_bits);
+	return ((float)_value) / (float)(1 << _n_bits);
 }
 
 std::ostream& operator<<(std::ostream& os, const Fixed& f)

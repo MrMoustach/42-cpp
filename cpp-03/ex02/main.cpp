@@ -5,27 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: iharchi <iharchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/18 01:27:11 by iharchi           #+#    #+#             */
-/*   Updated: 2021/11/20 20:14:19 by iharchi          ###   ########.fr       */
+/*   Created: 2021/11/20 22:56:27 by iharchi           #+#    #+#             */
+/*   Updated: 2021/11/21 03:46:08 by iharchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
-int main( void ) {
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-	
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	
-	std::cout << b << std::endl;
+int main(void)
+{
+	ClapTrap clapTrap = ClapTrap("V1");
+	ScavTrap scavTrap = ScavTrap("V2");
+	FragTrap fragTrap = FragTrap("V3");
 
-	std::cout << Fixed::max( a, b ) << std::endl;
-	std::cout << Fixed::min( a, b ) << std::endl;
-	
-	return 0;
+	clapTrap.attack(scavTrap.getName());
+	scavTrap.takeDamage(10);
+	scavTrap.attack(clapTrap.getName());
+	fragTrap.attack(scavTrap.getName());
+	fragTrap.attack(clapTrap.getName());
+	clapTrap.takeDamage(10);
+	clapTrap.beRepaired(10);
+	scavTrap.beRepaired(5);
+	scavTrap.guardGate();
+	fragTrap.highFivesGuys();
+	std::cout << fragTrap.getHp() << std::endl;
 }

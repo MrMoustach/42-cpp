@@ -6,7 +6,7 @@
 /*   By: iharchi <iharchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 22:56:27 by iharchi           #+#    #+#             */
-/*   Updated: 2021/11/21 02:49:31 by iharchi          ###   ########.fr       */
+/*   Updated: 2021/11/21 03:35:30 by iharchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,5 @@ int main(void)
 	clapTrap.beRepaired(10);
 	scavTrap.beRepaired(5);
 	scavTrap.guardGate();
+	std::cout << scavTrap.getAd() << std::endl;
 }

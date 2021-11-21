@@ -6,13 +6,13 @@
 #    By: iharchi <iharchi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/08 15:44:26 by iharchi           #+#    #+#              #
-#    Updated: 2021/11/20 23:04:24 by iharchi          ###   ########.fr        #
+#    Updated: 2021/11/21 02:41:58 by iharchi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ClapTrap
+NAME = ScavTrap
 
-SRCS = main.cpp ClapTrap.cpp
+SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp
 
 FLAGS = -Wall -Werror -Wextra --std="c++98"
 

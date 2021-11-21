@@ -6,7 +6,7 @@
 /*   By: iharchi <iharchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 21:16:30 by iharchi           #+#    #+#             */
-/*   Updated: 2021/11/21 23:23:18 by iharchi          ###   ########.fr       */
+/*   Updated: 2021/11/22 00:13:44 by iharchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Animal
 		Animal(const Animal & other);
 		Animal & operator=(Animal & other);
 		Animal * operator=(Animal * other);
-		virtual void makeSound() const;
+		virtual void makeSound() const = 0;
 		std::string getType() const;
 };
 #endif

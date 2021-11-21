@@ -6,7 +6,7 @@
 /*   By: iharchi <iharchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 21:34:02 by iharchi           #+#    #+#             */
-/*   Updated: 2021/11/21 23:22:13 by iharchi          ###   ########.fr       */
+/*   Updated: 2021/11/21 23:59:57 by iharchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,6 @@ int main()
 	std::cout << "- Deleting copies -" << std::endl;
 	delete cat;
 	delete cat2;
+	// Animal *t = new Animal();
+	// delete t;
 }

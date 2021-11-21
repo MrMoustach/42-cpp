@@ -6,7 +6,7 @@
 /*   By: iharchi <iharchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 02:35:26 by iharchi           #+#    #+#             */
-/*   Updated: 2021/11/21 02:49:44 by iharchi          ###   ########.fr       */
+/*   Updated: 2021/11/21 04:13:22 by iharchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ ScavTrap::~ScavTrap()
 }
 void ScavTrap::attack(std::string & target)
 {
-	std::cout << "ScavTrap" << _name << " Just slapped " << target << std::endl;
+	std::cout << "ScavTrap " << _name << " Just slapped " << target << std::endl;
 }
 void ScavTrap::takeDamage(unsigned int damage)
 {

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iharchi <iharchi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: zed <zed@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 19:07:24 by iharchi           #+#    #+#             */
-/*   Updated: 2021/11/24 19:15:12 by iharchi          ###   ########.fr       */
+/*   Updated: 2021/11/24 22:15:06 by zed              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "span.hpp"
 
-Span::Span() {}
+Span::Span() :_n(0) {}
 
 Span::Span(unsigned int n)
 {
@@ -22,33 +22,64 @@ Span::Span(unsigned int n)
 Span::Span(const Span& other)
 {
 	_n = other.size();
-	std::list<int>::iterator it = other._list.begin();
-	while (it != other._list.end())
-	{
-		_list.push_back(*it);
-	}
+	_list = other.getVector();
 }
 
-Span & operator=(const Span& other)
+Span::~Span(){}
+
+Span & Span::operator=(const Span& other)
 {
 	_n = other.size();
-	std::list<int>::iterator it = other.getList().begin();
-	while (it != other.getList().end())
-	{
-		_list.push_back(*it);
-	}
+	_list = other.getVector();
+	return (*this);
 }
 
-int size() const{return _n;}
+int Span::size() const{return _n;}
+std::vector<int> Span::getVector() const{return _list;}
 
-void addNumber(int a)
+void Span::addNumber(int a)
 {
+	if (_list.size() >= _n)
+	{
+		std::cout << "the array is full." << std::endl;
+		return;
+	}
 	_list.push_back(a);
 }
 
-int longestSpan() const
+void Span::addNumber(int start, int end)
+{
+	int diff = end - start;
+
+	if (diff + _list.size() <= _n)
+	{
+		std::cout << "the array is full." << std::endl;
+		return;
+	}
+	for (int i = start; i <= end; i++)
+		_list.push_back(i);
+}
+
+int Span::longestSpan() const
 {
 	int min = *std::min_element(_list.begin(), _list.end());
 	int max = *std::max_element(_list.begin(), _list.end());
-	return (max - min);
+	return std::abs(max - min);
+}
+int Span::shortestSpan() const
+{
+	std::vector<int> tmp = std::vector<int>(_list);
+	if (_list.size() < 2)
+		return (0);
+	std::sort(tmp.begin(), tmp.end());
+	int ret = std::abs(tmp[0] - tmp[1]);
+
+	for (unsigned int i = 0; i < _n; i++)
+	{
+		int diff = std::abs(tmp[i] - tmp[i + 1]);
+		
+		if (diff < ret)
+			ret = diff;
+	}
+	return (ret);
 }

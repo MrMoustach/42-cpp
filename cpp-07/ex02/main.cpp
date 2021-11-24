@@ -6,11 +6,25 @@
 /*   By: iharchi <iharchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 15:03:18 by iharchi           #+#    #+#             */
-/*   Updated: 2021/11/24 15:33:02 by iharchi          ###   ########.fr       */
+/*   Updated: 2021/11/24 16:00:08 by iharchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Array.hpp"
+
+class Test
+{
+	private:
+		int _a;
+	public:
+		Test() {}
+		Test(int a)
+		{
+			_a = a;
+		}
+		int getA() {return _a;}
+		void setA(int a) {_a = a;}
+};
 
 #define MAX_VAL 750
 int main(int, char**)
@@ -77,12 +91,20 @@ int main(int, char**)
 		
 		for (int i = 0; i < 10; i++)
 			std::cout << numbers[i] << std::endl;
-		std::cout << "--------------------------" << std::endl;
+		std::cout << "-------------Simple types-------------" << std::endl;
 		Array<int> test = numbers;
 		std::cout << test.size() << std::endl;
 		std::cout << "--------------------------" << std::endl;
 		for (int i = 0; i < 10; i++)
 			std::cout << test[i] << std::endl;
+	}
+	{
+		std::cout << "-------------Complex types-------------" << std::endl;
+		Array<Test> test(5);
+		for (int i = 0; i < 5; i++)
+			test[i].setA(i);
+		for (int i = 0; i < 5; i++)
+			std::cout << test[i].getA() << std::endl;
 	}
     return 0;
 }

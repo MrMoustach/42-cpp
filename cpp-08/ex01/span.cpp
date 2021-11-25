@@ -6,7 +6,7 @@
 /*   By: zed <zed@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 19:07:24 by iharchi           #+#    #+#             */
-/*   Updated: 2021/11/24 22:15:06 by zed              ###   ########.fr       */
+/*   Updated: 2021/11/25 17:03:22 by zed              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,12 @@ Span::Span(const Span& other)
 {
 	_n = other.size();
 	_list = other.getVector();
+}
+
+Span::Span(int start, int end)
+{
+	_n = end - start;
+	addNumber(start, end);
 }
 
 Span::~Span(){}
@@ -50,8 +56,13 @@ void Span::addNumber(int a)
 void Span::addNumber(int start, int end)
 {
 	int diff = end - start;
+	if (diff <= 0)
+	{
+		std::cout << "Come on really? put a smaller start than end." << std::endl;
+		return;
+	}
 
-	if (diff + _list.size() <= _n)
+	if (diff + _list.size() >= _n)
 	{
 		std::cout << "the array is full." << std::endl;
 		return;

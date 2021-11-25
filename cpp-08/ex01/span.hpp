@@ -6,7 +6,7 @@
 /*   By: zed <zed@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 18:26:18 by iharchi           #+#    #+#             */
-/*   Updated: 2021/11/24 22:07:01 by zed              ###   ########.fr       */
+/*   Updated: 2021/11/25 17:00:15 by zed              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class Span
 		Span();
 		Span(unsigned int n);
 		Span(const Span& other);
+		Span(int, int);
 		~Span();
 		Span & operator=(const Span& other);
 		int size() const;
